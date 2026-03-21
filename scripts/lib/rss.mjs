@@ -13,10 +13,19 @@ function stripCdata(input) {
 
 function stripHtml(input) {
   return input
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
     .replace(/<br\s*\/?>/gi, "\n")
     .replace(/<\/p>/gi, "\n")
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
+    .trim();
+}
+
+function stripUnsafeHtmlBlocks(input) {
+  return input
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "")
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
     .trim();
 }
 
@@ -64,7 +73,7 @@ export function parseRssItems(xml) {
     const descriptionHtml = readTag(block, "description");
     const contentEncodedHtml = readNamespacedTag(block, "content:encoded");
     const fullHtml = contentEncodedHtml || descriptionHtml;
-    const contentOnlyHtml = stripCommentSection(fullHtml);
+    const contentOnlyHtml = stripCommentSection(stripUnsafeHtmlBlocks(fullHtml));
     items.push({
       guid: readTag(block, "guid"),
       title: readTag(block, "title"),
@@ -72,7 +81,7 @@ export function parseRssItems(xml) {
       author: readTag(block, "author"),
       pubDate: readTag(block, "pubDate"),
       description: stripHtml(contentOnlyHtml),
-      descriptionHtml: fullHtml,
+      descriptionHtml: contentOnlyHtml,
       categories: readTags(block, "category"),
     });
   }

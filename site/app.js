@@ -86,6 +86,11 @@ function sanitizeTree(root) {
     sanitizeTree(child);
   }
 
+  if (root.tagName === "STYLE" || root.tagName === "SCRIPT") {
+    root.remove();
+    return;
+  }
+
   if (!allowedTags.has(root.tagName)) {
     unwrapNode(root);
     return;
