@@ -221,11 +221,13 @@ function getVisibleItems() {
 
 function getTagStats(items) {
   const counts = new Map();
+
   for (const item of items) {
     for (const tag of item.tags) {
       counts.set(tag, (counts.get(tag) ?? 0) + 1);
     }
   }
+
   return [...counts.entries()]
     .map(([name, count]) => ({ name, count }))
     .sort((left, right) => right.count - left.count || left.name.localeCompare(right.name, "zh-CN"));
@@ -239,9 +241,9 @@ function renderMeta(meta) {
 
   const pills = [
     `站点: ${meta.siteTitle}`,
-    `来源数: ${meta.sources.length}`,
-    `当前结果: ${visibleCount}`,
-    `更新时间: ${formatDate(meta.updatedAt)}`,
+    `来源: ${meta.sources.length}`,
+    `结果: ${visibleCount}`,
+    `更新于: ${formatDate(meta.updatedAt)}`,
   ];
 
   for (const text of pills) {
@@ -258,10 +260,11 @@ function renderFilterButtons(container, entries, activeValue, onClick) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "filter-chip";
+    button.dataset.count = entry.count;
     if (entry.value === activeValue) {
       button.classList.add("active");
     }
-    button.textContent = `${entry.label} (${entry.count})`;
+    button.textContent = entry.label;
     button.addEventListener("click", () => onClick(entry.value));
     container.appendChild(button);
   }
@@ -281,7 +284,7 @@ function renderFilters(meta, items) {
   ];
 
   const tagEntries = [
-    { value: "all", label: "全部标签", count: items.length },
+    { value: "all", label: "全部 Topics", count: items.length },
     ...getTagStats(items),
   ];
 
@@ -296,13 +299,25 @@ function renderFilters(meta, items) {
   });
 }
 
-function renderTagList(container, tags) {
+function renderSubscriptions(meta) {
+  const container = document.getElementById("subscription-links");
   container.innerHTML = "";
-  for (const tag of tags) {
-    const span = document.createElement("span");
-    span.className = "tag";
-    span.textContent = tag;
-    container.appendChild(span);
+
+  const entries = [
+    { label: "数据 JSON", href: "./data/feeds.json" },
+    { label: "全量 RSS", href: "./feeds/all.xml" },
+    ...meta.sources.map((source) => ({
+      label: `${source.name} RSS`,
+      href: `./feeds/${source.id}.xml`,
+    })),
+  ];
+
+  for (const entry of entries) {
+    const link = document.createElement("a");
+    link.className = "subscription-link";
+    link.href = entry.href;
+    link.textContent = entry.label;
+    container.appendChild(link);
   }
 }
 
@@ -344,6 +359,8 @@ function renderFeeds(items) {
   for (const item of items) {
     const node = template.content.cloneNode(true);
     const card = node.querySelector(".card");
+    const titleLink = node.querySelector(".title-link");
+    const title = node.querySelector(".title");
     const summary = node.querySelector(".summary");
     const summaryToggle = node.querySelector(".summary-toggle");
     const detailBlock = node.querySelector(".detail-block");
@@ -353,29 +370,31 @@ function renderFeeds(items) {
     const commentsBody = node.querySelector(".comments-body");
     const commentsTitle = node.querySelector(".comments-title");
     const mediaGrid = node.querySelector(".media-grid");
-    const tags = node.querySelector(".tag-list");
-    const link = node.querySelector(".link");
-    const isWechat = item.isWechat;
+    const actions = node.querySelector(".actions");
+
+    const hasDetail = !item.isWechat && Boolean(item.rich.contentHtml || item.rich.commentsHtml);
+    const needsSummaryToggle = item.summaryLength > 180;
 
     card.dataset.itemId = item.id;
     node.querySelector(".source").textContent = item.sourceLabel;
     node.querySelector(".time").textContent = formatDate(item.publishedAt);
-    node.querySelector(".title").textContent = item.title;
+    node.querySelector(".author").textContent = `作者: ${item.author}`;
+
+    title.textContent = item.title;
+    titleLink.href = item.url;
+
     summary.textContent = item.summary;
     if (!state.expandedSummaries.has(item.id)) {
       summary.classList.add("clamped");
     }
-    node.querySelector(".author").textContent = `作者: ${item.author}`;
 
-    renderTagList(tags, item.tags);
-    if (isWechat) {
+    if (item.isWechat) {
       mediaGrid.hidden = true;
       mediaGrid.innerHTML = "";
     } else {
       renderImageGallery(mediaGrid, item.rich.imageUrls);
     }
 
-    const needsSummaryToggle = item.summaryLength > 180;
     summaryToggle.hidden = !needsSummaryToggle;
     if (needsSummaryToggle) {
       summaryToggle.textContent = state.expandedSummaries.has(item.id) ? "收起摘要" : "展开摘要";
@@ -389,9 +408,10 @@ function renderFeeds(items) {
       });
     }
 
-    const hasDetail = !isWechat && Boolean(item.rich.contentHtml || item.rich.commentsHtml);
+    actions.hidden = !hasDetail;
     detailToggle.hidden = !hasDetail;
     detailBlock.hidden = !hasDetail || !state.expandedDetails.has(item.id);
+
     if (hasDetail) {
       const hasComments = item.rich.commentCount > 0;
       detailToggle.textContent = state.expandedDetails.has(item.id)
@@ -407,9 +427,7 @@ function renderFeeds(items) {
         }
         renderAll();
       });
-    }
 
-    if (hasDetail) {
       content.innerHTML = item.rich.contentHtml;
       comments.hidden = !item.rich.commentsHtml;
       commentsTitle.textContent = `热门评论 (${item.rich.commentCount})`;
@@ -421,14 +439,13 @@ function renderFeeds(items) {
       commentsBody.innerHTML = "";
     }
 
-    link.href = item.url;
-    link.textContent = isWechat ? "打开原文" : "查看原文";
     list.appendChild(node);
   }
 }
 
 function renderAll() {
   renderMeta(viewModel.meta);
+  renderSubscriptions(viewModel.meta);
   renderFilters(viewModel.meta, viewModel.items);
   renderFeeds(getVisibleItems());
 }
