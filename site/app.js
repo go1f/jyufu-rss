@@ -207,6 +207,7 @@ function enrichItem(item) {
     ...item,
     rich,
     summaryLength: item.summary.length,
+    isWechat: item.source === "wechat" || item.source === "wechat-mirror",
   };
 }
 
@@ -354,6 +355,7 @@ function renderFeeds(items) {
     const mediaGrid = node.querySelector(".media-grid");
     const tags = node.querySelector(".tag-list");
     const link = node.querySelector(".link");
+    const isWechat = item.isWechat;
 
     card.dataset.itemId = item.id;
     node.querySelector(".source").textContent = item.sourceLabel;
@@ -366,7 +368,12 @@ function renderFeeds(items) {
     node.querySelector(".author").textContent = `作者: ${item.author}`;
 
     renderTagList(tags, item.tags);
-    renderImageGallery(mediaGrid, item.rich.imageUrls);
+    if (isWechat) {
+      mediaGrid.hidden = true;
+      mediaGrid.innerHTML = "";
+    } else {
+      renderImageGallery(mediaGrid, item.rich.imageUrls);
+    }
 
     const needsSummaryToggle = item.summaryLength > 180;
     summaryToggle.hidden = !needsSummaryToggle;
@@ -382,7 +389,7 @@ function renderFeeds(items) {
       });
     }
 
-    const hasDetail = Boolean(item.rich.contentHtml || item.rich.commentsHtml);
+    const hasDetail = !isWechat && Boolean(item.rich.contentHtml || item.rich.commentsHtml);
     detailToggle.hidden = !hasDetail;
     detailBlock.hidden = !hasDetail || !state.expandedDetails.has(item.id);
     if (hasDetail) {
@@ -402,12 +409,20 @@ function renderFeeds(items) {
       });
     }
 
-    content.innerHTML = item.rich.contentHtml;
-    comments.hidden = !item.rich.commentsHtml;
-    commentsTitle.textContent = `热门评论 (${item.rich.commentCount})`;
-    commentsBody.innerHTML = item.rich.commentsHtml;
+    if (hasDetail) {
+      content.innerHTML = item.rich.contentHtml;
+      comments.hidden = !item.rich.commentsHtml;
+      commentsTitle.textContent = `热门评论 (${item.rich.commentCount})`;
+      commentsBody.innerHTML = item.rich.commentsHtml;
+    } else {
+      detailBlock.hidden = true;
+      content.innerHTML = "";
+      comments.hidden = true;
+      commentsBody.innerHTML = "";
+    }
 
     link.href = item.url;
+    link.textContent = isWechat ? "打开原文" : "查看原文";
     list.appendChild(node);
   }
 }
