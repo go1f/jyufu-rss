@@ -1,7 +1,7 @@
 {
   "siteTitle": "JYUFU RSS",
   "siteUrl": "https://go1f.github.io/jyufu-rss",
-  "updatedAt": "2026-03-21T16:12:11.902Z",
+  "updatedAt": "2026-03-21T17:42:44.985Z",
   "sources": [
     {
       "id": "weibo-tombkeeper",
@@ -10,42 +10,19 @@
       "homepage": "https://weibo.com/tombkeeper",
       "upstreamUrl": "http://127.0.0.1:1200/weibo/user/1401527553/displayComments=1&displayArticle=0",
       "itemCount": 5,
-      "status": "ok",
-      "lastCheckedAt": "2026-03-21T16:12:11.806Z",
-      "lastError": null
+      "status": "degraded",
+      "lastCheckedAt": "2026-03-21T17:37:43.662Z",
+      "lastError": "fetch failed"
     },
     {
       "id": "wechat-rockhazix",
       "name": "数字生命卡兹克",
       "type": "wechat-mirror",
       "homepage": "https://qnmlgb.tech/authors/689d376c11bb95417ae3553b",
-      "upstreamUrl": "http://127.0.0.1:4000/feeds/MP_WXS_3223096120.rss?mode=fulltext",
       "itemCount": 10,
-      "status": "ok",
-      "lastCheckedAt": "2026-03-21T16:12:11.858Z",
-      "lastError": null
-    },
-    {
-      "id": "wechat-mp-wxs-3244090624",
-      "name": "皮相",
-      "type": "wechat",
-      "homepage": "http://127.0.0.1:4000/feeds/MP_WXS_3244090624.rss?mode=fulltext",
-      "upstreamUrl": "http://127.0.0.1:4000/feeds/MP_WXS_3244090624.rss?mode=fulltext",
-      "itemCount": 10,
-      "status": "ok",
-      "lastCheckedAt": "2026-03-21T16:12:11.866Z",
-      "lastError": null
-    },
-    {
-      "id": "wechat-mp-wxs-3572959446",
-      "name": "晚点LatePost",
-      "type": "wechat",
-      "homepage": "http://127.0.0.1:4000/feeds/MP_WXS_3572959446.rss?mode=fulltext",
-      "upstreamUrl": "http://127.0.0.1:4000/feeds/MP_WXS_3572959446.rss?mode=fulltext",
-      "itemCount": 10,
-      "status": "ok",
-      "lastCheckedAt": "2026-03-21T16:12:11.901Z",
-      "lastError": null
+      "status": "degraded",
+      "lastCheckedAt": "2026-03-21T17:42:44.984Z",
+      "lastError": "fetch failed"
     }
   ]
 }
