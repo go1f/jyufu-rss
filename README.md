@@ -56,6 +56,9 @@ ops/
 
 docker-compose.rsshub.yml
   # 本机 RSSHub 服务
+
+rsshub/
+  Dockerfile           # 带原生 Chromium 的 RSSHub 镜像
 ```
 
 ## 数据流
@@ -155,6 +158,11 @@ export WEIBO_TOMBKEEPER_FEED_URL="http://127.0.0.1:1200/weibo/user/1401527553"
 ```bash
 docker compose -f docker-compose.rsshub.yml up -d
 ```
+
+说明：
+
+- 这里不是直接用官方镜像，而是通过 `rsshub/Dockerfile` 构建一个带 Debian `chromium` 的本地镜像
+- 这样微博路由在 arm64 环境下也能正常用 Puppeteer 获取访客 Cookie
 
 ## 本机定时任务
 

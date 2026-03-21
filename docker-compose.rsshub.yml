@@ -1,6 +1,8 @@
 services:
   rsshub:
-    image: diygod/rsshub:latest
+    build:
+      context: .
+      dockerfile: rsshub/Dockerfile
     container_name: jyufu-rss-rsshub
     restart: unless-stopped
     ports:
