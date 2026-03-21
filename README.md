@@ -88,7 +88,7 @@ rsshub/
 建议不要把微博和公众号写成一个通用抓取器，而是拆成两个来源适配器：
 
 - 微博：优先接 RSSHub 输出
-- 微信公众号：优先接 WeWe RSS 或 WeRSS 输出
+- 微信公众号：优先接公开镜像源或专用 RSS 服务输出
 
 然后再统一转换成你自己的 `feeds.json` 格式。
 
@@ -102,11 +102,16 @@ rsshub/
 
 这避免了在手机端直连家里电脑，也避免了让 GitHub Pages 承担它做不了的抓取工作。
 
-## 已接入的第一个真实来源
+## 当前已接入来源
 
-当前已经预留并实现了 `tombkeeper` 的微博来源，配置见 `collector/sources.json`。
+当前已经接入两个真实来源，配置都在 `collector/sources.json`：
 
-默认上游是：
+- `weibo-tombkeeper`
+- `wechat-rockhazix`
+
+### `weibo-tombkeeper`
+
+默认上游：
 
 - `https://rsshub.app/weibo/user/1401527553`
 
@@ -116,12 +121,20 @@ rsshub/
 
 如果你后续自建 RSSHub，直接把这个变量改成自己的实例地址即可。
 
+### `wechat-rockhazix`
+
+当前接的是公开镜像作者页：
+
+- `https://qnmlgb.tech/authors/689d376c11bb95417ae3553b`
+
+这个来源不依赖登录态，构建脚本会抓作者页上的公开文章列表，再补抓文章页里的标题、发布时间、摘要和配图。
+
 ## 本机执行方式
 
 先手动生成一次：
 
 ```bash
-npm run build:feeds
+set -a && source .env.local && set +a && npm run build:feeds
 ```
 
 如果只是验证生成链路，不走外网：
@@ -133,7 +146,7 @@ npm run build:feeds -- --fixture
 生成并自动提交、推送：
 
 ```bash
-npm run publish:feeds
+./scripts/run-publish-feeds.sh
 ```
 
 说明：
@@ -176,7 +189,7 @@ docker compose -f docker-compose.rsshub.yml up -d
 ./scripts/install-launchd.sh
 ```
 
-默认每 30 分钟执行一次：
+默认每 1 小时执行一次：
 
 - 生成最新 `site/data/feeds.json`
 - 生成 `site/feeds/*.xml`

@@ -9,5 +9,15 @@
     "upstreamEnv": "WEIBO_TOMBKEEPER_FEED_URL",
     "maxItems": 20,
     "tags": ["weibo", "tombkeeper"]
+  },
+  {
+    "id": "wechat-rockhazix",
+    "name": "数字生命卡兹克",
+    "type": "wechat-mirror",
+    "sourceLabel": "微信公众号",
+    "homepage": "https://qnmlgb.tech/authors/689d376c11bb95417ae3553b",
+    "authorPageUrl": "https://qnmlgb.tech/authors/689d376c11bb95417ae3553b",
+    "maxItems": 10,
+    "tags": ["wechat", "公众号", "数字生命卡兹克", "AI", "ChatGPT"]
   }
 ]

@@ -313,7 +313,7 @@ function renderImageGallery(container, imageUrls) {
 
     const image = document.createElement("img");
     image.src = url;
-    image.alt = "微博配图";
+    image.alt = "内容配图";
     image.loading = "lazy";
 
     link.appendChild(image);

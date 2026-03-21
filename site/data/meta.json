@@ -1,7 +1,7 @@
 {
   "siteTitle": "JYUFU RSS",
   "siteUrl": "https://go1f.github.io/jyufu-rss",
-  "updatedAt": "2026-03-21T11:30:51.022Z",
+  "updatedAt": "2026-03-21T11:57:10.359Z",
   "sources": [
     {
       "id": "weibo-tombkeeper",
@@ -11,7 +11,18 @@
       "upstreamUrl": "http://127.0.0.1:1200/weibo/user/1401527553/displayComments=1&displayArticle=0",
       "itemCount": 5,
       "status": "ok",
-      "lastCheckedAt": "2026-03-21T11:30:51.021Z",
+      "lastCheckedAt": "2026-03-21T11:57:10.099Z",
+      "lastError": null
+    },
+    {
+      "id": "wechat-rockhazix",
+      "name": "数字生命卡兹克",
+      "type": "wechat-mirror",
+      "homepage": "https://qnmlgb.tech/authors/689d376c11bb95417ae3553b",
+      "upstreamUrl": "https://qnmlgb.tech/authors/689d376c11bb95417ae3553b",
+      "itemCount": 6,
+      "status": "ok",
+      "lastCheckedAt": "2026-03-21T11:57:10.359Z",
       "lastError": null
     }
   ]
