@@ -136,6 +136,9 @@ rsshub/
 
 - `WECHAT_ROCKHAZIX_FEED_URL`
 
+另外，构建脚本会自动读取本机 WeWe RSS 的 `/feeds` 列表。
+你后续在 WeWe 后台新添加的公众号，会在下次构建时自动同步进站点和 RSS 输出，不需要再手工改 `collector/sources.json`。
+
 ## 本机执行方式
 
 先手动生成一次：

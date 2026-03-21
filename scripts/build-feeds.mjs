@@ -97,6 +97,13 @@ function unique(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
+function slugifySourceId(value) {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 function extractHashtags(text) {
   return [...text.matchAll(/#([^#\s]+)#/g)].map((match) => match[1]);
 }
@@ -163,7 +170,9 @@ function dedupeAndSort(items) {
 
 async function loadSourceDefinitions() {
   const file = path.join(collectorDir, "sources.json");
-  return readJson(file, []);
+  const staticSources = await readJson(file, []);
+  const weweSources = useFixture ? [] : await loadWeweSourceDefinitions(staticSources);
+  return [...staticSources, ...weweSources];
 }
 
 async function loadExistingFeeds() {
@@ -178,6 +187,50 @@ function selectLocation(source) {
   }
 
   return process.env[source.upstreamEnv] || source.upstreamUrl;
+}
+
+function getWeweFeedsApi() {
+  return process.env.WEWE_FEEDS_API || "http://127.0.0.1:4000/feeds";
+}
+
+async function loadWeweSourceDefinitions(existingSources) {
+  const api = getWeweFeedsApi();
+  let feeds;
+
+  try {
+    const response = await fetch(api, {
+      headers: {
+        "user-agent": "jyufu-rss/0.1 (+https://github.com/)",
+        accept: "application/json, text/plain;q=0.9, */*;q=0.8",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status} while fetching ${api}`);
+    }
+
+    feeds = await response.json();
+  } catch {
+    return [];
+  }
+
+  const existingNames = new Set(existingSources.map((source) => source.name));
+
+  return feeds
+    .filter((feed) => !existingNames.has(feed.name))
+    .map((feed) => {
+      const sourceId = slugifySourceId(feed.id || feed.name) || `wechat-${Date.now()}`;
+      return {
+        id: `wechat-${sourceId}`,
+        name: feed.name,
+        type: "wechat",
+        sourceLabel: "微信公众号",
+        homepage: `http://127.0.0.1:4000/feeds/${feed.id}.rss?mode=fulltext`,
+        upstreamUrl: `http://127.0.0.1:4000/feeds/${feed.id}.rss?mode=fulltext`,
+        maxItems: 10,
+        tags: unique(["wechat", "公众号", feed.name]),
+      };
+    });
 }
 
 async function fetchRssSourceItems(source, location = selectLocation(source)) {
