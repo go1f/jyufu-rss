@@ -1,7 +1,7 @@
 {
   "siteTitle": "JYUFU RSS",
   "siteUrl": "https://go1f.github.io/jyufu-rss",
-  "updatedAt": "2026-03-21T17:42:44.985Z",
+  "updatedAt": "2026-03-21T18:57:54.229Z",
   "sources": [
     {
       "id": "weibo-tombkeeper",
@@ -11,7 +11,7 @@
       "upstreamUrl": "http://127.0.0.1:1200/weibo/user/1401527553/displayComments=1&displayArticle=0",
       "itemCount": 5,
       "status": "degraded",
-      "lastCheckedAt": "2026-03-21T17:37:43.662Z",
+      "lastCheckedAt": "2026-03-21T18:52:52.687Z",
       "lastError": "fetch failed"
     },
     {
@@ -21,7 +21,7 @@
       "homepage": "https://qnmlgb.tech/authors/689d376c11bb95417ae3553b",
       "itemCount": 10,
       "status": "degraded",
-      "lastCheckedAt": "2026-03-21T17:42:44.984Z",
+      "lastCheckedAt": "2026-03-21T18:57:54.228Z",
       "lastError": "fetch failed"
     }
   ]
