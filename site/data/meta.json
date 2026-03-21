@@ -1,17 +1,18 @@
 {
   "siteTitle": "JYUFU RSS",
-  "updatedAt": "2026-03-21T10:59:48.539Z",
+  "siteUrl": "https://go1f.github.io/jyufu-rss",
+  "updatedAt": "2026-03-21T11:08:16.430Z",
   "sources": [
     {
       "id": "weibo-tombkeeper",
       "name": "tombkeeper",
       "type": "weibo",
       "homepage": "https://weibo.com/tombkeeper",
-      "upstreamUrl": "https://rsshub.app/weibo/user/1401527553",
-      "itemCount": 2,
+      "upstreamUrl": "http://127.0.0.1:1200/weibo/user/1401527553",
+      "itemCount": 0,
       "status": "degraded",
-      "lastCheckedAt": "2026-03-21T10:59:48.538Z",
-      "lastError": "HTTP 403 while fetching https://rsshub.app/weibo/user/1401527553"
+      "lastCheckedAt": "2026-03-21T11:08:16.429Z",
+      "lastError": "HTTP 503 while fetching http://127.0.0.1:1200/weibo/user/1401527553"
     }
   ]
 }

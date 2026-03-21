@@ -1,0 +1,10 @@
+{
+  "name": "jyufu-rss",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:feeds": "node scripts/build-feeds.mjs",
+    "publish:feeds": "node scripts/publish-feeds.mjs"
+  }
+}

@@ -4,22 +4,7 @@
     <title>tombkeeper - JYUFU RSS</title>
     <link>https://weibo.com/tombkeeper</link>
     <description>tombkeeper aggregated by JYUFU RSS.</description>
-    <lastBuildDate>Sat, 21 Mar 2026 10:59:48 GMT</lastBuildDate>
-    <item>
-      <title>示例微博：第一条</title>
-      <link>https://weibo.com/1401527553/example-1</link>
-      <guid>weibo:tombkeeper:fixture-1</guid>
-      <pubDate>Sat, 21 Mar 2026 01:30:00 GMT</pubDate>
-      <description>这是用于本地验证生成链路的微博内容。</description>
-      <author>tombkeeper</author>
-    </item>
-    <item>
-      <title>示例微博：第二条</title>
-      <link>https://weibo.com/1401527553/example-2</link>
-      <guid>weibo:tombkeeper:fixture-2</guid>
-      <pubDate>Fri, 20 Mar 2026 12:00:00 GMT</pubDate>
-      <description>这条用于验证排序、摘要与 RSS 输出。</description>
-      <author>tombkeeper</author>
-    </item>
+    <lastBuildDate>Sat, 21 Mar 2026 11:08:16 GMT</lastBuildDate>
+
   </channel>
 </rss>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JYUFU RSS</title>
+    <meta
+      name="description"
+      content="一个由本机采集、通过 GitHub Pages 对外发布的个人资讯聚合页。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">Personal Feed Hub</p>
+        <h1>一个自己的资讯汇聚入口</h1>
+        <p class="intro">
+          这里展示的是已经发布到 GitHub Pages 的聚合结果。真正的采集工作在本机完成，手机只负责阅读。
+        </p>
+        <div class="meta" id="site-meta">
+          <span>正在载入站点信息...</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>订阅入口</h2>
+          <p>后续可把这些地址加入任意 RSS 阅读器。</p>
+        </div>
+        <div class="link-grid">
+          <a class="feed-link" href="./data/feeds.json">数据 JSON</a>
+          <a class="feed-link" href="./feeds/all.xml">全量 RSS</a>
+          <a class="feed-link" href="./feeds/weibo-tombkeeper.xml">tombkeeper RSS</a>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>最近更新</h2>
+          <p>按时间倒序显示来自不同平台的统一条目。</p>
+        </div>
+        <div id="feed-list" class="feed-list">
+          <p class="loading">正在载入内容...</p>
+        </div>
+      </section>
+    </main>
+
+    <template id="item-template">
+      <article class="card">
+        <div class="card-top">
+          <span class="source"></span>
+          <time class="time"></time>
+        </div>
+        <h3 class="title"></h3>
+        <p class="summary"></p>
+        <div class="card-bottom">
+          <span class="author"></span>
+          <a class="link" target="_blank" rel="noreferrer noopener">查看原文</a>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

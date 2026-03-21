@@ -1,0 +1,13 @@
+[
+  {
+    "id": "weibo-tombkeeper",
+    "name": "tombkeeper",
+    "type": "weibo",
+    "sourceLabel": "微博",
+    "homepage": "https://weibo.com/tombkeeper",
+    "upstreamUrl": "https://rsshub.app/weibo/user/1401527553",
+    "upstreamEnv": "WEIBO_TOMBKEEPER_FEED_URL",
+    "maxItems": 20,
+    "tags": ["weibo", "tombkeeper"]
+  }
+]

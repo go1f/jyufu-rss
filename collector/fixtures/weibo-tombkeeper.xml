@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>tombkeeper</title>
+    <link>https://weibo.com/tombkeeper</link>
+    <description>Fixture feed for local verification</description>
+    <item>
+      <title><![CDATA[示例微博：第一条]]></title>
+      <link>https://weibo.com/1401527553/example-1</link>
+      <guid>weibo:tombkeeper:fixture-1</guid>
+      <pubDate>Sat, 21 Mar 2026 09:30:00 GMT+8</pubDate>
+      <description><![CDATA[这是用于本地验证生成链路的微博内容。]]></description>
+      <author><![CDATA[tombkeeper]]></author>
+    </item>
+    <item>
+      <title><![CDATA[示例微博：第二条]]></title>
+      <link>https://weibo.com/1401527553/example-2</link>
+      <guid>weibo:tombkeeper:fixture-2</guid>
+      <pubDate>Fri, 20 Mar 2026 20:00:00 GMT+8</pubDate>
+      <description><![CDATA[这条用于验证排序、摘要与 RSS 输出。]]></description>
+      <author><![CDATA[tombkeeper]]></author>
+    </item>
+  </channel>
+</rss>

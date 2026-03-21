@@ -1,0 +1,7 @@
+services:
+  rsshub:
+    image: diygod/rsshub:latest
+    container_name: jyufu-rss-rsshub
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:1200:1200"
