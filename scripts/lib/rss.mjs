@@ -39,6 +39,16 @@ function readTag(block, tagName) {
   return decodeXmlEntities(stripCdata(match[1].trim()));
 }
 
+function readNamespacedTag(block, tagName) {
+  const escaped = tagName.replace(":", "\\:");
+  const match = block.match(new RegExp(`<${escaped}[^>]*>([\\s\\S]*?)<\\/${escaped}>`, "i"));
+  if (!match) {
+    return "";
+  }
+
+  return decodeXmlEntities(stripCdata(match[1].trim()));
+}
+
 function readTags(block, tagName) {
   const matches = block.matchAll(new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)<\\/${tagName}>`, "gi"));
   return [...matches].map((match) => decodeXmlEntities(stripCdata(match[1].trim()))).filter(Boolean);
@@ -52,7 +62,9 @@ export function parseRssItems(xml) {
   while ((match = itemRegex.exec(xml)) !== null) {
     const block = match[1];
     const descriptionHtml = readTag(block, "description");
-    const contentOnlyHtml = stripCommentSection(descriptionHtml);
+    const contentEncodedHtml = readNamespacedTag(block, "content:encoded");
+    const fullHtml = contentEncodedHtml || descriptionHtml;
+    const contentOnlyHtml = stripCommentSection(fullHtml);
     items.push({
       guid: readTag(block, "guid"),
       title: readTag(block, "title"),
@@ -60,7 +72,7 @@ export function parseRssItems(xml) {
       author: readTag(block, "author"),
       pubDate: readTag(block, "pubDate"),
       description: stripHtml(contentOnlyHtml),
-      descriptionHtml,
+      descriptionHtml: fullHtml,
       categories: readTags(block, "category"),
     });
   }

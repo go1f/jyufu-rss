@@ -2,3 +2,4 @@ logs/
 .DS_Store
 node_modules/
 .env.local
+/data/

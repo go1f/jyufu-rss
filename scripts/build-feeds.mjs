@@ -180,12 +180,7 @@ function selectLocation(source) {
   return process.env[source.upstreamEnv] || source.upstreamUrl;
 }
 
-async function fetchSourceItems(source) {
-  if (source.type === "wechat-mirror") {
-    return fetchWechatMirrorItems(source);
-  }
-
-  const location = selectLocation(source);
+async function fetchRssSourceItems(source, location = selectLocation(source)) {
   const xml = await readTextFromLocation(location);
   const rawItems = parseRssItems(xml).slice(0, source.maxItems ?? 20);
   const items = rawItems.map((item) => normalizeItem(source, item));
@@ -193,6 +188,19 @@ async function fetchSourceItems(source) {
     location,
     items,
   };
+}
+
+async function fetchSourceItems(source) {
+  if (source.type === "wechat-mirror") {
+    const rssLocation = source.rssUpstreamEnv ? process.env[source.rssUpstreamEnv] : "";
+    if (rssLocation) {
+      return fetchRssSourceItems({ ...source, type: "wechat" }, rssLocation);
+    }
+
+    return fetchWechatMirrorItems(source);
+  }
+
+  return fetchRssSourceItems(source);
 }
 
 function parseWechatMirrorList(html, baseUrl) {

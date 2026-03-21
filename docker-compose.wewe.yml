@@ -1,0 +1,15 @@
+services:
+  wewe-rss:
+    image: cooderl/wewe-rss-sqlite:latest
+    container_name: jyufu-wewe-rss
+    ports:
+      - "127.0.0.1:4000:4000"
+    environment:
+      - DATABASE_TYPE=sqlite
+      - AUTH_CODE=jyufu-rss
+      - FEED_MODE=fulltext
+      - ENABLE_CLEAN_HTML=true
+      - CRON_EXPRESSION=15 * * * *
+      - SERVER_ORIGIN_URL=http://127.0.0.1:4000
+    volumes:
+      - ./data/wewe:/app/data

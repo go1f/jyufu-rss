@@ -57,6 +57,9 @@ ops/
 docker-compose.rsshub.yml
   # 本机 RSSHub 服务
 
+docker-compose.wewe.yml
+  # 本机 WeWe RSS 服务
+
 rsshub/
   Dockerfile           # 带原生 Chromium 的 RSSHub 镜像
 ```
@@ -129,6 +132,10 @@ rsshub/
 
 这个来源不依赖登录态，构建脚本会抓作者页上的公开文章列表，再补抓文章页里的标题、发布时间、摘要和配图。
 
+如果本机已经跑起 WeWe RSS 并拿到该公众号的专属 feed，则可通过环境变量切换到全文 RSS：
+
+- `WECHAT_ROCKHAZIX_FEED_URL`
+
 ## 本机执行方式
 
 先手动生成一次：
@@ -166,6 +173,12 @@ export SITE_URL="https://<你的GitHub用户名>.github.io/<你的仓库名>"
 export WEIBO_TOMBKEEPER_FEED_URL="http://127.0.0.1:1200/weibo/user/1401527553"
 ```
 
+如果你本机启用了 WeWe RSS，建议再设置：
+
+```bash
+export WECHAT_ROCKHAZIX_FEED_URL="http://127.0.0.1:4000/feeds/<feed-id>.rss?mode=fulltext"
+```
+
 仓库里已附带一个最小化的 Docker Compose 文件：
 
 ```bash
@@ -176,6 +189,24 @@ docker compose -f docker-compose.rsshub.yml up -d
 
 - 这里不是直接用官方镜像，而是通过 `rsshub/Dockerfile` 构建一个带 Debian `chromium` 的本地镜像
 - 这样微博路由在 arm64 环境下也能正常用 Puppeteer 获取访客 Cookie
+
+公众号全文源可以单独启动：
+
+```bash
+./scripts/start-wewe-rss.sh
+```
+
+启动后访问 `http://127.0.0.1:4000`，完成：
+
+1. 添加微信读书账号并扫码登录
+2. 在公众号源里添加“数字生命卡兹克”的公众号分享链接
+3. 复制生成的 feed 地址，写入 `WECHAT_ROCKHAZIX_FEED_URL`
+
+也可以直接自动写入：
+
+```bash
+node scripts/link-wechat-feed.mjs "数字生命卡兹克"
+```
 
 ## 本机定时任务
 
