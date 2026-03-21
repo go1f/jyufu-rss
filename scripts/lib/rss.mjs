@@ -20,6 +20,16 @@ function stripHtml(input) {
     .trim();
 }
 
+function stripCommentSection(input) {
+  return input
+    .replace(
+      /<br\s+clear=["']both["']\s*>\s*<div[^>]*><\/div>\s*<div[^>]*>\s*<h3>热门评论<\/h3>[\s\S]*$/i,
+      ""
+    )
+    .replace(/<div[^>]*>\s*<h3>热门评论<\/h3>[\s\S]*$/i, "")
+    .trim();
+}
+
 function readTag(block, tagName) {
   const match = block.match(new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)<\\/${tagName}>`, "i"));
   if (!match) {
@@ -29,6 +39,11 @@ function readTag(block, tagName) {
   return decodeXmlEntities(stripCdata(match[1].trim()));
 }
 
+function readTags(block, tagName) {
+  const matches = block.matchAll(new RegExp(`<${tagName}[^>]*>([\\s\\S]*?)<\\/${tagName}>`, "gi"));
+  return [...matches].map((match) => decodeXmlEntities(stripCdata(match[1].trim()))).filter(Boolean);
+}
+
 export function parseRssItems(xml) {
   const items = [];
   const itemRegex = /<item\b[^>]*>([\s\S]*?)<\/item>/gi;
@@ -36,13 +51,17 @@ export function parseRssItems(xml) {
 
   while ((match = itemRegex.exec(xml)) !== null) {
     const block = match[1];
+    const descriptionHtml = readTag(block, "description");
+    const contentOnlyHtml = stripCommentSection(descriptionHtml);
     items.push({
       guid: readTag(block, "guid"),
       title: readTag(block, "title"),
       link: readTag(block, "link"),
       author: readTag(block, "author"),
       pubDate: readTag(block, "pubDate"),
-      description: stripHtml(readTag(block, "description")),
+      description: stripHtml(contentOnlyHtml),
+      descriptionHtml,
+      categories: readTags(block, "category"),
     });
   }
 

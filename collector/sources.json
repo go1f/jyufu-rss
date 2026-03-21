@@ -5,7 +5,7 @@
     "type": "weibo",
     "sourceLabel": "微博",
     "homepage": "https://weibo.com/tombkeeper",
-    "upstreamUrl": "https://rsshub.app/weibo/user/1401527553",
+    "upstreamUrl": "https://rsshub.app/weibo/user/1401527553/displayComments=1&displayArticle=0",
     "upstreamEnv": "WEIBO_TOMBKEEPER_FEED_URL",
     "maxItems": 20,
     "tags": ["weibo", "tombkeeper"]

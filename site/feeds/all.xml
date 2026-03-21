@@ -4,7 +4,7 @@
     <title>JYUFU RSS</title>
     <link>https://go1f.github.io/jyufu-rss</link>
     <description>A personal static feed hub published via GitHub Pages.</description>
-    <lastBuildDate>Sat, 21 Mar 2026 11:19:50 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2026 11:30:51 GMT</lastBuildDate>
     <item>
       <title>Windows 11 发布至今，虽然有些特性还是不错的，比如 Notepad 支持标签和 Markdown 了，但瑜不掩瑕，终于搞得天怒人怨。昨天，微软管 Windows 的执行副总裁 Pava...</title>
       <link>https://weibo.com/1401527553/Qx7Z7m4ix</link>
@@ -14,43 +14,11 @@
       <author>tombkeeper</author>
     </item>
     <item>
-      <title>这种应该由受害者家属烹而食之。 //@沈沉舟:苍天终于开了一次眼！ - 转发 @南方日报:&amp;ensp;【#梅姨被逮捕#】#人贩子梅姨落网##梅姨对贩卖儿童供认不讳#3月21日，...</title>
-      <link>https://weibo.com/1401527553/Qx6ekE2wZ</link>
-      <guid>https://weibo.com/1401527553/Qx6ekE2wZ</guid>
-      <pubDate>Sat, 21 Mar 2026 04:46:24 GMT</pubDate>
-      <description>这种应该由受害者家属烹而食之。 // @沈沉舟 :苍天终于开了一次眼！ - 转发 @南方日报 : 【 #梅姨被逮捕# 】 #人贩子梅姨落网# #梅姨对贩卖儿童供认不讳# 3月21日，南方+记者从广州市公安局了解到，经警方不懈努力，“张维平等人拐卖儿童案”取得重大进展，犯罪嫌疑人谢某某（女）落网，其即为该案关键人物“梅姨”。 2003年9月至2005年12月期间，多名儿童在广州增城、惠州博罗等地被拐。案发后，公安部、广东省公安厅将该案列为督办案件，成立省、市、区三级公安机关联合专案组开展侦办工作，并于2016年将张维平等5名犯罪分子抓获。张维平供认其拐卖儿童的作案事实，并称所拐儿童是通过“梅姨”贩卖。 为了能尽早让失散的家庭团圆，专案组偕同受害家庭和社会各界力量持续开展寻亲、解救工作，于2019年至2024年间将被拐儿童悉数找回，并组织认亲。2023年4月，主犯张维平等人被依法执行死刑。但因真实身份等关键信息的缺失，“梅姨”作为该案的关键人物，始终未能归案。 按照“不查清不放过，不核实不罢休”的原则，专案组民警采取“内紧外松”的策略，多年来坚持走访调查、公布模拟画像并广泛征集线索。 2025年，在公安部指导、外省公安机关的支持下，专案组发现一位名叫谢某某的女子，其特征与“梅姨”高度吻合。经进一步核实，谢某某正是“梅姨”。 近期，专案组将嫌疑人谢某某抓获。经审讯，谢某某对其贩卖儿童的事实供认不讳。 目前，嫌疑人谢某某已被警方依法执行逮捕，案件正在进一步办理中。 南方日报的微博视频 视频无法显示，请前往 微博视频 观看。</description>
-      <author>tombkeeper</author>
-    </item>
-    <item>
       <title>wget 差不多是最早的 HTTP 协议命令行工具。我参加工作后在当时的部门里推广的第一个工具就是 wget，当时版本还是 1.5.3。wget 诞生后就没怎么大改，甚至一直不...</title>
       <link>https://weibo.com/1401527553/Qx5zPE4ID</link>
       <guid>https://weibo.com/1401527553/Qx5zPE4ID</guid>
       <pubDate>Sat, 21 Mar 2026 03:06:36 GMT</pubDate>
       <description>wget 差不多是最早的 HTTP 协议命令行工具。我参加工作后在当时的部门里推广的第一个工具就是 wget，当时版本还是 1.5.3。wget 诞生后就没怎么大改，甚至一直不支持通过命令行参数设定代理服务器。 但因为历史悠久，资格老，存在大量依赖 wget 的脚本，估计是为了避免影响这些脚本的稳定性，所以后来社区没有直接对 wget 进行升级，而是搞了一个新分支 wget2。 wget2 是一个现代化的 wget，支持多线程，支持 HTTP/2，还原生支持 RSS。对于通过 RSS 提供更新的网站，原来需要先用别的程序解析 RSS，然后再下载，现在 wget2 自己就全能干了。</description>
-      <author>tombkeeper</author>
-    </item>
-    <item>
-      <title>回复@yzfriend:如果能几句话就教会你怎么变废为宝，那我至少值十个共和国勋章。//@yzfriend:教主，请问遇到这种孩子怎么解决这个问题//@tombkeeper:一例：#25岁...</title>
-      <link>https://weibo.com/1401527553/Qx4erhUXc</link>
-      <guid>https://weibo.com/1401527553/Qx4erhUXc</guid>
-      <pubDate>Fri, 20 Mar 2026 23:41:10 GMT</pubDate>
-      <description>回复 @yzfriend :如果能几句话就教会你怎么变废为宝，那我至少值十个共和国勋章。// @yzfriend :教主，请问遇到这种孩子怎么解决这个问题// @tombkeeper :一例： #25岁儿子毕业要躺平急哭父亲# - 转发 @tombkeeper : 大概六七年前，我在淘宝上一个宜家代购的店里买了些电池，还有几件小杂物，加起来不超过五十元。两天后的晚上，一个老太太把东西给送来了。我很奇怪，即使同城，店家自己送货也很罕见。再说这么点东西，更是不应该。 老太太说开店的是他儿子。他儿子这两天心情不好，在家里躺着，不管店了。她看到有个本市的订单，就替儿子去采购，然后坐公交来送货。 那一刻，我对“废物”两个字有了更深刻的理解。 PS：自己的店，即使关了也没什么。心情不好可以把货下架，可以不发货。但自己躺着生气，眼瞅着老母亲去替自己干活，不是废物是什么呢？部分群众为之辩护的急迫程度简直就像在为自己辩护一样。</description>
-      <author>tombkeeper</author>
-    </item>
-    <item>
-      <title>一例：#25岁儿子毕业要躺平急哭父亲# - 转发 @tombkeeper:&amp;ensp;大概六七年前，我在淘宝上一个宜家代购的店里买了些电池，还有几件小杂物，加起来不超过五十元。...</title>
-      <link>https://weibo.com/1401527553/Qx44YidxR</link>
-      <guid>https://weibo.com/1401527553/Qx44YidxR</guid>
-      <pubDate>Fri, 20 Mar 2026 23:17:50 GMT</pubDate>
-      <description>一例： #25岁儿子毕业要躺平急哭父亲# - 转发 @tombkeeper : 大概六七年前，我在淘宝上一个宜家代购的店里买了些电池，还有几件小杂物，加起来不超过五十元。两天后的晚上，一个老太太把东西给送来了。我很奇怪，即使同城，店家自己送货也很罕见。再说这么点东西，更是不应该。 老太太说开店的是他儿子。他儿子这两天心情不好，在家里躺着，不管店了。她看到有个本市的订单，就替儿子去采购，然后坐公交来送货。 那一刻，我对“废物”两个字有了更深刻的理解。 PS：自己的店，即使关了也没什么。心情不好可以把货下架，可以不发货。但自己躺着生气，眼瞅着老母亲去替自己干活，不是废物是什么呢？部分群众为之辩护的急迫程度简直就像在为自己辩护一样。</description>
-      <author>tombkeeper</author>
-    </item>
-    <item>
-      <title>目前基于石墨烯电加热和温水循环等方法的体温模拟技术已经有了。 - 转发 @tombkeeper:&amp;ensp;最好的语音识别技术会最先用于电话监控，最好的图像识别技术会最先用...</title>
-      <link>https://weibo.com/1401527553/QwWV2o2er</link>
-      <guid>https://weibo.com/1401527553/QwWV2o2er</guid>
-      <pubDate>Fri, 20 Mar 2026 05:04:08 GMT</pubDate>
-      <description>目前基于石墨烯电加热和温水循环等方法的体温模拟技术已经有了。 - 转发 @tombkeeper : 最好的语音识别技术会最先用于电话监控， 最好的图像识别技术会最先用于视频监控， 最好的仿人机器人技术会最先用于性玩具。</description>
       <author>tombkeeper</author>
     </item>
     <item>
@@ -67,14 +35,6 @@
       <guid>https://weibo.com/1401527553/QwRJ46htW</guid>
       <pubDate>Thu, 19 Mar 2026 15:50:54 GMT</pubDate>
       <description>《实习医生格蕾》居然还在拍，都二十二季了。当初把《Grey&apos;s Anatomy》翻译为《实习医生格蕾》的人恐怕做梦也想不到实习医生格蕾能一直拍成外科主任格蕾。 2005 年第一季开播时出生的孩子，今年可能已经去医院实习了。</description>
-      <author>tombkeeper</author>
-    </item>
-    <item>
-      <title>之前已经有研究发现：长期使用GPS的司机和不使用GPS的司机相比，大脑的海马体部分缩小，空间记忆能力退化。 - 转发 @tombkeeper:&amp;ensp;现代人血糖血脂的各种问题...</title>
-      <link>https://weibo.com/1401527553/QwRn00QpN</link>
-      <guid>https://weibo.com/1401527553/QwRn00QpN</guid>
-      <pubDate>Thu, 19 Mar 2026 14:56:32 GMT</pubDate>
-      <description>之前已经有研究发现：长期使用GPS的司机和不使用GPS的司机相比，大脑的海马体部分缩小，空间记忆能力退化。 - 转发 @tombkeeper : 现代人血糖血脂的各种问题很大程度上是因为很多需要肌肉的事现在都借助机械了。 随着很多需要脑子的事情都借助 AI 之后，未来各类脑功能退化的问题估计也会年轻化。</description>
       <author>tombkeeper</author>
     </item>
     <item>

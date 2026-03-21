@@ -38,7 +38,22 @@ function toIsoDate(value) {
   return date.toISOString();
 }
 
+function unique(values) {
+  return [...new Set(values.filter(Boolean))];
+}
+
+function extractHashtags(text) {
+  return [...text.matchAll(/#([^#\s]+)#/g)].map((match) => match[1]);
+}
+
 function normalizeItem(source, item) {
+  const itemTags = unique([
+    ...(source.tags ?? []),
+    ...(item.categories ?? []),
+    ...extractHashtags(item.title || ""),
+    ...extractHashtags(item.description || ""),
+  ]);
+
   return {
     id: item.guid || item.link || `${source.id}:${item.title}`,
     source: source.type,
@@ -47,9 +62,10 @@ function normalizeItem(source, item) {
     author: item.author || source.name,
     title: item.title || "(无标题)",
     summary: item.description || "暂无摘要",
+    contentHtml: item.descriptionHtml || "",
     url: item.link || source.homepage,
     publishedAt: toIsoDate(item.pubDate),
-    tags: source.tags ?? [],
+    tags: itemTags,
   };
 }
 
