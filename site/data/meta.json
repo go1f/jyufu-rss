@@ -1,0 +1,17 @@
+{
+  "siteTitle": "JYUFU RSS",
+  "updatedAt": "2026-03-21T10:59:48.539Z",
+  "sources": [
+    {
+      "id": "weibo-tombkeeper",
+      "name": "tombkeeper",
+      "type": "weibo",
+      "homepage": "https://weibo.com/tombkeeper",
+      "upstreamUrl": "https://rsshub.app/weibo/user/1401527553",
+      "itemCount": 2,
+      "status": "degraded",
+      "lastCheckedAt": "2026-03-21T10:59:48.538Z",
+      "lastError": "HTTP 403 while fetching https://rsshub.app/weibo/user/1401527553"
+    }
+  ]
+}
