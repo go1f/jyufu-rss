@@ -4,45 +4,29 @@
     <title>tombkeeper - JYUFU RSS</title>
     <link>https://weibo.com/tombkeeper</link>
     <description>tombkeeper aggregated by JYUFU RSS.</description>
-    <lastBuildDate>Sun, 22 Mar 2026 08:50:10 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2026 12:44:41 GMT</lastBuildDate>
+    <item>
+      <title>2007 年 8 月 15 日《新民周刊》青春专题：《怀念并消费着：“青春”进行式》网页链接《从街头顽主到军绿一代》网页链接《“青春”进行式》网页链接《佟大为：青...</title>
+      <link>https://weibo.com/1401527553/QxiG08p3P</link>
+      <guid>https://weibo.com/1401527553/QxiG08p3P</guid>
+      <pubDate>Sun, 22 Mar 2026 12:27:31 GMT</pubDate>
+      <description>2007 年 8 月 15 日《新民周刊》青春专题： 《怀念并消费着：“青春”进行式》 网页链接 《从街头顽主到军绿一代》 网页链接 《“青春”进行式》 网页链接 《佟大为：青春专业户》 网页链接 《刘烨：通关密语并非必须》 网页链接 《戏剧化残酷》 网页链接 《大院，不相信眼泪》 网页链接</description>
+      <author>tombkeeper</author>
+    </item>
+    <item>
+      <title>之前说过 ChatGPT 开始搞词条了（网页链接）。后来我研究了一下，那些词条应该是自动生成的，可以理解为某种持久化的 KV Cache。刚才我发现 ChatGPT 还搞了可交...</title>
+      <link>https://weibo.com/1401527553/QxeBDfL70</link>
+      <guid>https://weibo.com/1401527553/QxeBDfL70</guid>
+      <pubDate>Sun, 22 Mar 2026 02:05:46 GMT</pubDate>
+      <description>之前说过 ChatGPT 开始搞词条了（ 网页链接 ）。后来我研究了一下，那些词条应该是自动生成的，可以理解为某种持久化的 KV Cache。 刚才我发现 ChatGPT 还搞了可交互公式可视化，并且这些可视化很可能也是自动生成的。看来不光要抢维基百科的饭，还要抢可汗学院的饭。 tombkeeper的微博视频 视频无法显示，请前往 微博视频 观看。</description>
+      <author>tombkeeper</author>
+    </item>
     <item>
       <title>同样是洋葱卷心菜切成丝，叫老虎菜还是叫蔬菜沙拉，价钱大不同。</title>
       <link>https://weibo.com/1401527553/Qx963kOu8</link>
       <guid>https://weibo.com/1401527553/Qx963kOu8</guid>
       <pubDate>Sat, 21 Mar 2026 12:04:14 GMT</pubDate>
       <description>同样是洋葱卷心菜切成丝，叫老虎菜还是叫蔬菜沙拉，价钱大不同。</description>
-      <author>tombkeeper</author>
-    </item>
-    <item>
-      <title>Windows 11 发布至今，虽然有些特性还是不错的，比如 Notepad 支持标签和 Markdown 了，但瑜不掩瑕，终于搞得天怒人怨。昨天，微软管 Windows 的执行副总裁 Pava...</title>
-      <link>https://weibo.com/1401527553/Qx7Z7m4ix</link>
-      <guid>https://weibo.com/1401527553/Qx7Z7m4ix</guid>
-      <pubDate>Sat, 21 Mar 2026 09:14:24 GMT</pubDate>
-      <description>Windows 11 发布至今，虽然有些特性还是不错的，比如 Notepad 支持标签和 Markdown 了，但瑜不掩瑕，终于搞得天怒人怨。昨天，微软管 Windows 的执行副总裁 Pavan Davuluri 出来写了一封公开信：《我们对Windows质量的承诺》。说是承诺，其实也是道歉：blogs.windows.com/windows-insider/2026/03/20/our-commitment-to-windows-quality/ 以下是主要内容（括号里是我加的）： - “更多任务栏自定义功能，包括垂直和顶部位置”（就是把 Windows 95 就支持但在 Windows 11 中给去掉的特性重新加回来，另参考阅读： 网页链接 ） - “在人工智能最有意义的地方融入工艺和专注”（就是把到处乱塞的 Copilot 按钮给去掉） - “减少Windows更新带来的干扰”（就是不在用户想赶紧关机下班的时候卡在更新上结果最后还不是关机而是重启） - “更快、更可靠的文件资源管理器”（基本功能做成这样，专业用户有几个用系统自带文件管理器的） - “对小部件和信息流体验的更多控制”（狗皮膏药再不清理，整个 Windows 就是一个大流氓软件）</description>
-      <author>tombkeeper</author>
-    </item>
-    <item>
-      <title>wget 差不多是最早的 HTTP 协议命令行工具。我参加工作后在当时的部门里推广的第一个工具就是 wget，当时版本还是 1.5.3。wget 诞生后就没怎么大改，甚至一直不...</title>
-      <link>https://weibo.com/1401527553/Qx5zPE4ID</link>
-      <guid>https://weibo.com/1401527553/Qx5zPE4ID</guid>
-      <pubDate>Sat, 21 Mar 2026 03:06:36 GMT</pubDate>
-      <description>wget 差不多是最早的 HTTP 协议命令行工具。我参加工作后在当时的部门里推广的第一个工具就是 wget，当时版本还是 1.5.3。wget 诞生后就没怎么大改，甚至一直不支持通过命令行参数设定代理服务器。 但因为历史悠久，资格老，存在大量依赖 wget 的脚本，估计是为了避免影响这些脚本的稳定性，所以后来社区没有直接对 wget 进行升级，而是搞了一个新分支 wget2。 wget2 是一个现代化的 wget，支持多线程，支持 HTTP/2，还原生支持 RSS。对于通过 RSS 提供更新的网站，原来需要先用别的程序解析 RSS，然后再下载，现在 wget2 自己就全能干了。</description>
-      <author>tombkeeper</author>
-    </item>
-    <item>
-      <title>大家猜猜美国什么时候会从伊朗抽身： 网页链接</title>
-      <link>https://weibo.com/1401527553/QwVPm7cvB</link>
-      <guid>https://weibo.com/1401527553/QwVPm7cvB</guid>
-      <pubDate>Fri, 20 Mar 2026 02:17:23 GMT</pubDate>
-      <description>大家猜猜美国什么时候会从伊朗抽身： 网页链接</description>
-      <author>tombkeeper</author>
-    </item>
-    <item>
-      <title>《实习医生格蕾》居然还在拍，都二十二季了。当初把《Grey&apos;s Anatomy》翻译为《实习医生格蕾》的人恐怕做梦也想不到实习医生格蕾能一直拍成外科主任格蕾。2005 ...</title>
-      <link>https://weibo.com/1401527553/QwRJ46htW</link>
-      <guid>https://weibo.com/1401527553/QwRJ46htW</guid>
-      <pubDate>Thu, 19 Mar 2026 15:50:54 GMT</pubDate>
-      <description>《实习医生格蕾》居然还在拍，都二十二季了。当初把《Grey&apos;s Anatomy》翻译为《实习医生格蕾》的人恐怕做梦也想不到实习医生格蕾能一直拍成外科主任格蕾。 2005 年第一季开播时出生的孩子，今年可能已经去医院实习了。</description>
       <author>tombkeeper</author>
     </item>
   </channel>
