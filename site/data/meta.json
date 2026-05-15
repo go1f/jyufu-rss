@@ -1,7 +1,7 @@
 {
   "siteTitle": "JYUFU RSS",
   "siteUrl": "https://go1f.github.io/jyufu-rss",
-  "updatedAt": "2026-05-15T02:45:42.385Z",
+  "updatedAt": "2026-05-15T04:31:33.707Z",
   "sources": [
     {
       "id": "weibo-tombkeeper",
@@ -10,9 +10,9 @@
       "homepage": "https://weibo.com/tombkeeper",
       "upstreamUrl": "http://127.0.0.1:1200/weibo/user/1401527553/displayComments=1&displayArticle=0",
       "itemCount": 8,
-      "status": "ok",
-      "lastCheckedAt": "2026-05-15T02:45:42.383Z",
-      "lastError": null
+      "status": "degraded",
+      "lastCheckedAt": "2026-05-15T04:31:33.699Z",
+      "lastError": "fetch failed"
     },
     {
       "id": "wechat-rockhazix",
@@ -21,7 +21,7 @@
       "homepage": "https://qnmlgb.tech/authors/689d376c11bb95417ae3553b",
       "itemCount": 10,
       "status": "degraded",
-      "lastCheckedAt": "2026-05-15T02:45:42.385Z",
+      "lastCheckedAt": "2026-05-15T04:31:33.707Z",
       "lastError": "fetch failed"
     }
   ]
